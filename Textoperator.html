@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string-operation</title>
+    <style>
+        body{
+            background-color: rgb(45, 14, 74);
+            margin: 0;
+            padding: 0;
+        }
+        .text-center{
+            text-align: center;
+            color:bisque;
+        }
+        .text-container{
+            width: 70%;
+            display: block;
+            margin: 20px auto;
+            min-height: 100px;
+            padding: 10px;
+            border-radius: 20px;
+
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            margin: 20px auto;
+        }
+        .btn{
+            width: 200px;
+            padding: 8px 10px;
+            font-size: 15px;
+            border-radius: 30px;
+            border: solid;
+            background-color: rgb(127, 38, 211);
+            color: #780606;
+            cursor: pointer;
+            font-family: BoldItalic;
+
+        }
+        .btn:hover{
+            transition: 0.5s;
+            background-color: rgb(219, 206, 231);
+            box-shadow: 0 0 10px 5px ;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">TEXT-OPERATION</h1>
+    <input
+     class="text-container"
+    type="text"
+    id="input"
+    placeholder="enter the text to perform operation"/>
+    <input
+     class="text-container"
+    type="text"
+    id="output"
+    placeholder="output will be display here"/>
+    <div class="buttons">
+        <button type="button"class="btn" 
+        onclick=" handelUpperCase()">
+        Upper Case</button>
+        <button type="button"class="btn"
+        onclick="handelLowerCase()">Lower Case</button>
+        <button type="button"class="btn"
+        onclick=" handelWordCount()">Word Count</button>
+        <button type="button"class="btn"
+        onclick=" handelCharacterCount()">Chracter Count</button>
+
+    </div>
+
+</body>
+<script>
+     const inputElement = document.getElementById('input');
+     const outputElement = document.getElementById('output');
+
+    function handelUpperCase(){
+const inputText = inputElement.value;
+outputElement.value = inputText.toUpperCase();
+    }
+    function handelLowerCase(){
+        const inputText = inputElement.value;
+        outputElement.value = inputText.toLowerCase();
+}
+function handelWordCount(){
+    const totalwords = inputElement.value.split("").length;
+    outputElement.value = `Word Count: ${totalwords}`;
+}
+function handelCharacterCount(){
+outputElement.value = ` Character Count:${inputElement.value.length}`;
+}
+    
+   /*function handelTextOps(op){
+        const inputElement = document.getElementById('input');
+    const outputElement = document.getElementById('output');
+    
+    
+       
+    }
+        switch(op){
+            case "uppercase":
+                outputElement.value = inputElement.value.toUpperCase();
+                break;
+                case "lowercase":
+                outputElement.value = inputElement.value.toLowerCase();
+                break;
+                case "wordcount":
+               const totalwords = inputElement.value.split("").length;
+               outputElement.value = `Word Count: ${totalwords}`;
+                break;
+                case "charcount":
+                outputElement.value = `Character Count: ${inputElement.value.length}`;
+                break;
+        }*/
+</script>
+</html>
