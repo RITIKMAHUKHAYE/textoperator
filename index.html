@@ -61,7 +61,7 @@
     id="output"
     placeholder="output will be display here"/>
     <div class="buttons">
-        <button type="button"class="btn" 
+        <button type="button"class="btn"
         onclick=" handelUpperCase()">
         Upper Case</button>
         <button type="button"class="btn"
@@ -86,10 +86,11 @@ outputElement.value = inputText.toUpperCase();
         const inputText = inputElement.value;
         outputElement.value = inputText.toLowerCase();
 }
-function handelWordCount(){
-    const totalwords = inputElement.value.split("").length;
-    outputElement.value = `Word Count: ${totalwords}`;
-}
+function handelWordCount() {
+            const inputText = inputElement.value.trim(); 
+            const totalWords = inputText.length === 0 ? 0 : inputText.split(/\s+/).length; 
+            outputElement.value = `Word Count: ${totalWords}`;
+        }
 function handelCharacterCount(){
 outputElement.value = ` Character Count:${inputElement.value.length}`;
 }
